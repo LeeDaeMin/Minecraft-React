@@ -8,6 +8,8 @@ export function Ground () {
         position: [0, -0.5, 0]
     }))
 
+    groundTexture.repeat.set(100, 100)
+
     return (
         <mesh ref={ref}>
             <planeBufferGeometry attach="geometry" args={[100, 100]} />
