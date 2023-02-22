@@ -3,6 +3,7 @@ import { Sky } from '@react-three/drei'
 import { Physics } from '@react-three/cannon'
 import { Ground } from '../components/Ground.jsx'
 import { FVP } from '../components/FVP.jsx'
+import { Player } from '../components/Player.jsx'
 
 function App () {
   return (
@@ -11,6 +12,7 @@ function App () {
       <ambientLight intensity={0.5} />
       <FVP />
       <Physics>
+          < Player />
           <Ground />
       </Physics>
     </Canvas>
