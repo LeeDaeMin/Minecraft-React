@@ -12,7 +12,7 @@ function App () {
       <ambientLight intensity={0.5} />
       <FVP />
       <Physics>
-          < Player />
+          <Player />
           <Ground />
       </Physics>
     </Canvas>

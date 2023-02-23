@@ -5,22 +5,21 @@ import { Vector3 } from "three"
 import { useKeyboard } from "../src/hooks/useKeyboard"
 
 const CHARACTER_SPEED = 4
-const CHARACTER_JUMP = 10
+const CHARACTER_JUMP = 4
 
 export const Player = () => {
     const { 
         moveBackward,
         moveForward,
         moveLeft,
-        moveRight,
-        Jump 
+        moveRight
     } = useKeyboard()
 
     const { camera } = useThree()
     const [ref, api] = useSphere( () => ({
         mass: 1,
         type: "Dynamic",
-        position: [0, 1, 0]
+        position: [0, 0.5, 0]
     }))
 
     const pos = useRef ([0, 0, 0])
@@ -72,6 +71,8 @@ export const Player = () => {
             vel.current[1],
             direction.z
         )
+
+
     })
 
 
