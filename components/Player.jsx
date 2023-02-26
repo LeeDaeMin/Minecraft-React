@@ -12,7 +12,8 @@ export const Player = () => {
         moveBackward,
         moveForward,
         moveLeft,
-        moveRight
+        moveRight,
+        jump
     } = useKeyboard()
 
     const { camera } = useThree()
@@ -71,6 +72,14 @@ export const Player = () => {
             vel.current[1],
             direction.z
         )
+        
+        if (jump && Math.abs(vel.current[1]) < 0.05) {
+            api.velocity.set(
+                vel.current[0],
+                CHARACTER_JUMP,
+                vel.current[2]
+            )  
+        }
 
 
     })
