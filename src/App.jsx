@@ -4,7 +4,7 @@ import { Physics } from '@react-three/cannon'
 import { Ground } from '../components/Ground.jsx'
 import { FVP } from '../components/FVP.jsx'
 import { Player } from '../components/Player.jsx'
-import { Cubes } from '../components/Cubes.jsx'
+import { Cubes } from '../components/Cubes.jsx' 
 
 function App () {
   return (

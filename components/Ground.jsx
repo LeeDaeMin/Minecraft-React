@@ -13,15 +13,17 @@ export function Ground () {
 
     groundTexture.repeat.set(100, 100)
 
-    const handleClickGround = event =>{
+    const handleClickGround = event => {
         event.stopPropagation()
-        console.log(event.point)
+        const [x, y, z] = Object.values(event.point).map( n => Math.ceil(n))
+        addCube(x, y, z)
     }
 
     return (
         <mesh 
-        onClick={ handleClickGround }
-        ref={ref}>
+            onClick={ handleClickGround }
+            ref={ref}
+        >
             <planeBufferGeometry attach="geometry" args={[100, 100]} />
             <meshStandardMaterial attach="material" map={ groundTexture } />
         </mesh>
