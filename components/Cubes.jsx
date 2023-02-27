@@ -5,10 +5,13 @@ export const Cubes = () => {
     const [cubes] = useStore(state => [state.cubes])
 
     return cubes.map(({ id, pos, texture }) => {
-        return <Cube 
-            key={id} 
-            pos={pos} 
+        return (
+          <Cube
+            key={id}
+            id={id}
+            position={pos}
             texture={texture}
-            />
-        })
-}
+          />
+        )
+      })
+    }
