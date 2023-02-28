@@ -5,6 +5,7 @@ import { Ground } from '../components/Ground.jsx'
 import { FVP } from '../components/FVP.jsx'
 import { Player } from '../components/Player.jsx'
 import { Cubes } from '../components/Cubes.jsx' 
+import { TextureSelect } from '../components/TextureSelect.jsx'
 
 function App () {
   return (
@@ -20,9 +21,9 @@ function App () {
         </Physics>
       </Canvas>
       <div className='pointer'>+</div>
+      <TextureSelect />
     </>
   )
 }
 
 export default App
-0
