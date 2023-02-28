@@ -21,12 +21,9 @@ export const useStore = create(set => ({
             }]
         }))
     },
-    removeCube: (x, y, z) => {
+    removeCube: (id) => {
         set(state =>  ({
-            cubes: state.cubes.filer( cube => {
-                const [X, Y, Z] = cube.pos
-                return X !== x || Y !== y || Z !== z
-            })
+            cubes: state.cubes.filter( cube => cube.id !== id)
         }))
     },
     setTexture: () => {},
