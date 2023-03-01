@@ -15,6 +15,14 @@ export const TextureSelect = () => {
         log
       } = useKeyboard()
 
+      useEffect( () => {
+        const visibilityTimeout = setTimeout( () => {
+            setVisible(false)
+        }, 1000)
+        setVisible(true)
+        return () => clearTimeout(visibilityTimeout)
+      }, [texture])
+
     useEffect( () => {
         const options = {
             dirt,
@@ -38,19 +46,22 @@ export const TextureSelect = () => {
 
     return (
         <div
-        className='texture-select'
+        className={`texture-select ${visible ? '' : 'hidden'}`}
         >
             {
-                Object.entries(image).map( ([imgKey, img]) => {
-                    return (
+                Object
+                .entries(image)
+                .map( ([imgKey, img]) => {
+                    return(
                         <img
+                        className={texture === imgKey.replace('Img', '') ? 'selected' : ''}
                             key={imgKey}
                             src={img}
                             alt={imgKey}
                         />
                     )
+                })
             }
-            )}
         </div>
     )
 }

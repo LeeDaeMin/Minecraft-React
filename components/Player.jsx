@@ -15,7 +15,7 @@ export const Player = () => {
         moveRight,
         jump
     } = useKeyboard()
-
+    
     const { camera } = useThree()
     const [ref, api] = useSphere( () => ({
         mass: 1,
